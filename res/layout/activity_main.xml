@@ -1,0 +1,98 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"   
+    tools:context=".MainActivity" >
+    
+    <LinearLayout
+        android:id="@+id/linear_layout1"
+        android:layout_width="fill_parent"
+        android:layout_height="720dip"
+        android:orientation="horizontal"
+        android:paddingBottom="1.0dip"
+        android:paddingLeft="4.0dip"
+        android:paddingRight="4.0dip"
+        android:paddingTop="5.0dip" >
+
+        
+        <com.example.lightthyfire.ComplexGameView
+            android:id="@+id/gameView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+       
+        
+    </LinearLayout>
+	
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/bottom_bar"
+            android:paddingLeft="4.0dip"
+        	android:paddingRight="4.0dip"
+        	android:paddingBottom="1.0dip"
+        	android:paddingTop="1.0dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/init_velocity" />
+
+            <EditText
+                android:id="@+id/initVeloText"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="numberDecimal" >
+
+                <requestFocus />
+            </EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/angle_degree" />
+
+            <EditText
+                android:id="@+id/angleDegreeText"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="numberDecimal" >
+                <requestFocus />
+            </EditText>
+
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="getFieldValues"
+                android:text="@string/enter_input_button" />
+
+        </LinearLayout>
+    
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+           	android:layout_alignParentBottom="true"
+        	android:layout_centerHorizontal="true"
+            android:orientation="horizontal" >
+    <Button
+        android:id="@+id/quitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="moveBackground"
+        android:text="@string/quit_button" />
+    
+     <Button
+            android:id="@+id/reset_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="resetGameView"
+            android:text="@string/reset_button" />
+     </LinearLayout>
+
+</RelativeLayout>
